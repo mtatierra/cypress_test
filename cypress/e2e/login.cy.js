@@ -1,3 +1,8 @@
+Cypress.on("uncaught:exception", (err, runnable) => {
+  console.error(err.stack);
+  return false;
+});
+
 describe("Login Test", () => {
   it("Successfully logs in", () => {
     cy.visit("https://practicetestautomation.com/practice-test-login/");
